@@ -1,0 +1,2 @@
+memsource_cli
+test

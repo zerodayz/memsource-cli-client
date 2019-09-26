@@ -1,0 +1,23 @@
+[console_scripts]
+memsource = memsource_cli.memsource:main
+
+[memsource.cli]
+analyse_create = memsource_cli.analysis.v1.analysis:CreateAnalysis
+analyse_delete = memsource_cli.analysis.v1.analysis:DeleteAnalysis
+analyse_language_create = memsource_cli.analysis.v1.analysis:CreateAnalysisByLanguages
+analyse_project_list = memsource_cli.analysis.v2.analysis:ListAnalysisByProject
+analyse_show = memsource_cli.analysis.v2.analysis:ShowAnalysis
+auth_login = memsource_cli.auth.v1.login:Login
+auth_whoami = memsource_cli.auth.v1.whoami:WhoAmI
+job_create = memsource_cli.job.v1.job:CreateJob
+job_delete = memsource_cli.job.v1.job:DeleteJobs
+job_list = memsource_cli.job.v2.job:ListJobs
+job_show = memsource_cli.job.v1.job:ShowJob
+project_create = memsource_cli.project.v1.project:CreateProject
+project_delete = memsource_cli.project.v1.project:DeleteProject
+project_list = memsource_cli.project.v1.project:ListProjects
+project_show = memsource_cli.project.v1.project:ShowProject
+project_template_create = memsource_cli.project.v2.project:CreateProjectFromTemplate
+user_create = memsource_cli.user.v2.user:CreateUser
+user_get = memsource_cli.user.v2.user:GetUser
+
