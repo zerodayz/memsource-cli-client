@@ -1,26 +1,32 @@
 from setuptools import setup, find_packages
 
 PROJECT = 'memsource_cli'
-VERSION = '0.2rc0'
+VERSION = '0.2'
 
 if __name__ == "__main__":
+
+    with open('README.md') as f:
+        long_description = f.read()
+
     setup(
         name=PROJECT,
         version=VERSION,
         description="Unofficial Memsource CLI client",
+        long_description=long_description,
+	long_description_content_type="text/markdown",
         keywords='memsource',
-        url="",
-        author="Robin Cernin",
-        author_email="r9n.developer@gmail.com",
+        url="https://github.com/unofficial-memsource/memsource-cli-client",
+        author="Robin Černín",
+        author_email="cerninr@gmail.com",
         packages=find_packages(),
         include_package_data=True,
         install_requires=[
-	    'requests',
             'cliff',
             'certifi>=2017.4.17',
             'python-dateutil>=2.1',
             'six>=1.10',
-            'urllib3>=1.23'
+            'urllib3>=1.23',
+	    'requests'
         ],
         entry_points={
             'console_scripts': [
