@@ -6,6 +6,7 @@
 [![PyPI version](https://badge.fury.io/py/memsource-cli.svg)](https://badge.fury.io/py/memsource-cli)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/unofficial-memsource/memsource-cli-client)
 <a href="https://t.me/Unofficial_MemsourceCLI"><img src="https://img.shields.io/badge/Telegram-Unofficial Memsource CLI Telegram Group-blue?logo=telegram" alt="Unofficial Memsource CLI Telegram Group"></a>
+[![Google group : Unofficial Memsource CLI Forum](https://img.shields.io/badge/Google%20Group-Unofficial%20Memsource%20CLI%20Forum-blue.svg)](https://groups.google.com/forum/#!forum/unofficial-memsource-cli)
 
 <img src="docs/Cloudy_shell.png" border=0 align="right">
 
@@ -18,6 +19,10 @@
 - [How does it looks like?](#how-does-it-looks-like)
 - [Collaborate](#collaborate)
 - [Usage](#usage)
+- [Getting Started](#getting-started)
+- [Install from PyPI](#pip-install)
+- [Install from Github](#github-install)
+- [Configuration](#configuration)
 - [Contact us!](#contact-us)
 
 <!-- /TOC -->
@@ -128,12 +133,43 @@ Commands:
   user get       Get user
 ```
 
+<a id="markdown-getting-started" name="getting-started"></a>
 ## Getting Started
-
 Requirements for python2 environments:
 - package `python-virtualenv`
 
+<a id="markdown-pip-install" name="pip-install"></a>
+### Install from PyPI
 
+```
+DIRECTORY="${HOME}/git/memsource-cli-client/"
+if [[ ! -d ${DIRECTORY} ]]; then
+  mkdir -p ${DIRECTORY}
+fi
+cd $DIRECTORY
+
+if [[ -f $(which python3) ]];
+then
+  python3 -m venv --system-site-packages .memsource
+else
+  if [[ ! -f $(which virtualenv) ]];
+  then
+    sudo yum -y install python-virtualenv
+  fi
+  virtualenv --system-site-packages .memsource
+fi
+
+source .memsource/bin/activate
+pip install -U pip
+pip install -U setuptools
+pip install memsource-cli
+
+clear
+memsource --help
+```
+
+<a id="markdown-github-install" name="github-install"></a>
+### Install from Github
 ```
 DIRECTORY="$HOME/git/"
 
@@ -179,6 +215,7 @@ memsource --help
 ```
 And that's it!
 
+<a id="markdown-configuration" name="configuration"></a>
 ## Configuration
 This way you can configure your username/password and set up memsource token for faster authentication:
 
